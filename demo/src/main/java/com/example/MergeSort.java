@@ -9,8 +9,8 @@ public class MergeSort {
   public static void main(String[] args) {
     String fileName =
       "/Users/natnaelebuy/Documents/GitHub/Githubnatnael/Love-Cake/demo/src/main/java/com/example/cupcake_test_10.json";
-     // "/Users/natnaelebuy/Documents/GitHub/Githubnatnael/Love-Cake/demo/src/main/java/com/example/cupcake_test_5.json";
-    
+     
+
     // read cupcake names
     JSONArray cupcakeArray = JSONFile.readArray(fileName);
     String[] cupcakeNameArray = nameArray(cupcakeArray);

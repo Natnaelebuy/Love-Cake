@@ -9,10 +9,8 @@ public class LoveCake {
   public static void main(String[] args) {
     String fileName =
       "/Users/natnaelebuy/Documents/GitHub/Githubnatnael/Love-Cake/demo/src/main/java/com/example/cupcake_test_5.json";
-    // String fileName =
-    //   "/Users/jerom/Documents/GitHub/class-java/sort/demo/src/main/java/com/sort/cupcake_10.json";
-
-    // read cupcake names
+    
+      // read cupcake names
     JSONArray cupcakeArray = JSONFile.readArray(fileName);
     String[] cupcakeNameArray = nameArray(cupcakeArray);
     System.out.println(cupcakeNameArray);
