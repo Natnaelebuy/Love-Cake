@@ -8,12 +8,9 @@ public class MergeSort {
 
   public static void main(String[] args) {
     String fileName =
-      "/Users/jerom/Documents/GitHub/class-java/sort/demo/src/main/java/com/sort/cupcake_3906.json";
-    // String fileName =
-    //   "/Users/jerom/Documents/GitHub/class-java/sort/demo/src/main/java/com/sort/cupcake_10.json";
-    // String fileName =
-    //   "/Users/jerom/Documents/GitHub/class-java/sort/demo/src/main/java/com/sort/cupcake_test.json";
-
+      "/Users/natnaelebuy/Documents/GitHub/Githubnatnael/Love-Cake/demo/src/main/java/com/example/cupcake_test_10.json";
+     // "/Users/natnaelebuy/Documents/GitHub/Githubnatnael/Love-Cake/demo/src/main/java/com/example/cupcake_test_5.json";
+    
     // read cupcake names
     JSONArray cupcakeArray = JSONFile.readArray(fileName);
     String[] cupcakeNameArray = nameArray(cupcakeArray);
@@ -22,6 +19,8 @@ public class MergeSort {
     // print unsorted list
     System.out.println("----- Unsorted array -----");
     print(cupcakeNameArray);
+
+    
 
     // sort
     mergeSort(cupcakeNameArray);
@@ -33,6 +32,19 @@ public class MergeSort {
     System.out.println("----- Statistics -----");
     System.out.printf("Size of array = %d\n", cupcakeNameArray.length);
     System.out.printf("Count = %d\n", count);
+  }
+
+  // get array of cupcake names
+  public static String[] nameArray(JSONArray cupcakeArray) {
+    String[] arr = new String[cupcakeArray.size()];
+
+    // get names from json object
+    for (int i = 0; i < cupcakeArray.size(); i++) {
+      JSONObject o = (JSONObject) cupcakeArray.get(i);
+      String name = (String) o.get("name");
+      arr[i] = name;
+    }
+    return arr;
   }
 
   // print array
@@ -53,19 +65,7 @@ public class MergeSort {
     }
   }
 
-  // get array of cupcake names
-  public static String[] nameArray(JSONArray cupcakeArray) {
-    String[] arr = new String[cupcakeArray.size()];
-
-    // get names from json object
-    for (int i = 0; i < cupcakeArray.size(); i++) {
-      JSONObject o = (JSONObject) cupcakeArray.get(i);
-      String name = (String) o.get("name");
-      arr[i] = name;
-    }
-    return arr;
-  }
-
+  
   // merge sort array, O(n logBase2 n)
   public static void mergeSort(String[] arr) {
     // call recurisve merge method with the array
@@ -88,23 +88,22 @@ public class MergeSort {
     int rightStart = middle + 1;
     int rightEnd = right;
 
-    // System.out.println("merge sort left");
-    // print(arr, leftStart, leftEnd);
+    System.out.println("merge sort left");
+    print(arr, leftStart, leftEnd);
     sort(arr, leftStart, leftEnd);
 
-    // System.out.println("merge sort right");
-    // print(arr, rightStart, rightEnd);
+    System.out.println("merge sort right");
+    print(arr, rightStart, rightEnd);
     sort(arr, rightStart, rightEnd);
 
     // merge the two sorted arrays
     merge(arr, left, middle, right);
-    // System.out.println("after merge");
-    // print(arr, left, right);
+    System.out.println("after merge");
+    print(arr, left, right);
   }
 
   // merge two arrays indicated by [left to middle] and [middle+1 to right]
   public static void merge(String[] arr, int left, int middle, int right) {
-    // compare all the values adding them in to temp
     String[] temp = new String[right - left + 1];
 
     // indices for left and right
@@ -115,7 +114,7 @@ public class MergeSort {
     int t = 0;
     while ((l <= middle) && (r <= right)) {
       if ((arr[l].compareTo(arr[r])) < 0) {
-        // add left element to temp
+        // temp
         temp[t] = arr[l];
         t++;
         l++;
@@ -127,11 +126,10 @@ public class MergeSort {
       }
     }
 
-    // add the rest of the remaining elements (empty out the left and right arrays)
 
     // add any remaining left elements in to temp
     while (l <= middle) {
-      // add left element to temp
+      // temp
       temp[t] = arr[l];
       t++;
       l++;
