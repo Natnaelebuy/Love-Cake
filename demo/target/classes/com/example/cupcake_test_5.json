@@ -41,5 +41,14 @@
             "Chocolate",
             "Buttercream"
         ]
+    },
+    {
+        "id": 1005,
+        "name": "Tiramisu Biscuit",
+        "price": 7.01,
+        "frosting": [
+            "Whipped Cream Frosting",
+            "Chocolate"
+        ]
     }
 ]
