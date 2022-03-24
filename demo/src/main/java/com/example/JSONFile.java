@@ -1,4 +1,4 @@
-package com.sort;
+package com.example;
 
 import java.io.*;
 import org.json.simple.*;
