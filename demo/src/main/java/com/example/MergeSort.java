@@ -83,18 +83,18 @@ public class MergeSort {
     // split the array in half, sort each half recursively, then merge
     int middle = left + ((right - left) / 2);
 
-    int leftStart = left;
-    int leftEnd = middle;
-    int rightStart = middle + 1;
-    int rightEnd = right;
+    //int leftStart = left;
+    //int leftEnd = middle;
+    //int rightStart = middle + 1;
+    //int rightEnd = right;
 
-    System.out.println("merge sort left");
-    print(arr, leftStart, leftEnd);
-    sort(arr, leftStart, leftEnd);
+    //System.out.println("merge sort left");
+    //print(arr, leftStart, leftEnd);
+    //sort(arr, leftStart, leftEnd);
 
-    System.out.println("merge sort right");
-    print(arr, rightStart, rightEnd);
-    sort(arr, rightStart, rightEnd);
+    //System.out.println("merge sort right");
+    //print(arr, rightStart, rightEnd);
+    //sort(arr, rightStart, rightEnd);
 
     // merge the two sorted arrays
     merge(arr, left, middle, right);
